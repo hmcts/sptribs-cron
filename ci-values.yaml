@@ -1,0 +1,32 @@
+job:
+  image: hmctspublic.azurecr.io/sptribs/case-api:latest
+  aadIdentityName: sptribs
+  keyVaults:
+    sptribs:
+      secrets:
+        - name: app-insights-connection-string
+          alias: app-insights-connection-string
+        - name: uk-gov-notify-api-key
+          alias: UK_GOV_NOTIFY_API_KEY
+        - name: s2s-case-api-secret
+          alias: S2S_SECRET
+        - name: idam-secret
+          alias: IDAM_CLIENT_SECRET
+        - name: idam-systemupdate-username
+          alias: IDAM_SYSTEM_UPDATE_USERNAME
+        - name: idam-systemupdate-password
+          alias: IDAM_SYSTEM_UPDATE_PASSWORD
+  environment:
+    S2S_URL: http://rpe-service-auth-provider-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    IDAM_API_BASEURL: "https://idam-api.{{ .Values.global.environment }}.platform.hmcts.net"
+    CASE_DATA_STORE_BASEURL: "http://ccd-data-store-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal"
+    DOC_ASSEMBLY_URL: http://dg-docassembly-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    CASE_DOCUMENT_AM_URL: http://ccd-case-document-am-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    PRD_API_BASEURL : "http://rd-professional-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal"
+  args:
+    - run
+    - SystemMigrateCaseFlagsTask
+  schedule: "0 0/10 * * *"
+  concurrencyPolicy: Forbid
+global:
+  jobKind: CronJob
