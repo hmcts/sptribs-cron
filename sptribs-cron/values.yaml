@@ -25,7 +25,7 @@ job:
     DOC_ASSEMBLY_URL: http://dg-docassembly-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
     CASE_DOCUMENT_AM_URL: http://ccd-case-document-am-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
     PRD_API_BASEURL : "http://rd-professional-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal"
-  schedule: "0 0/10 * * *"
+  schedule: "0 0/11 * * *"
   concurrencyPolicy: Forbid
 global:
   jobKind: CronJob
