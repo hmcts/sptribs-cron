@@ -1,4 +1,4 @@
-name: sptribs-cron
+name: sptribscron
 description: SPTRIBS cron jobs
 home: https://github.com/hmcts/sptribs-cron
 apiVersion: v2
