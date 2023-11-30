@@ -23,6 +23,7 @@ jobs:
         parameters:
           chartReleaseName: sptrib-scron-ci-test
           chartNamespace: chart-tests
+          chartPath: ./sptribscron/
 
   - job: Release
     # Make sure we have a tag to run this job - remove on publish
