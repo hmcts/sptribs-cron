@@ -21,7 +21,6 @@ jobs:
     steps:
       - template: steps/charts/validate.yaml@cnp-azuredevops-libraries
         parameters:
-          chartName: sptribs-cron
           chartReleaseName: sptribs-cron-ci-test
           chartNamespace: chart-tests
           chartPath: ./sptribs-cron/
