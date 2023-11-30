@@ -24,6 +24,7 @@ jobs:
           chartName: sptribs-cron
           chartReleaseName: sptribs-cron-ci-test
           chartNamespace: chart-tests
+          chartPath: ./sptribs-cron
 
   - job: Release
     # Make sure we have a tag to run this job - remove on publish
@@ -41,3 +42,4 @@ jobs:
           chartName: sptribs-cron
           chartReleaseName: sptribs-cron
           chartNamespace: chart-tests
+          chartPath: ./sptribs-cron
