@@ -21,8 +21,9 @@ jobs:
     steps:
       - template: steps/charts/validate.yaml@cnp-azuredevops-libraries
         parameters:
-          chartReleaseName: sptribscron-ci-test
+          chartReleaseName: sptrib-scron-ci-test
           chartNamespace: chart-tests
+          chartPath: ./sptribscron/
 
   - job: Release
     # Make sure we have a tag to run this job - remove on publish
@@ -40,3 +41,4 @@ jobs:
           chartName: sptribscron
           chartReleaseName: sptribs-cron
           chartNamespace: chart-tests
+          chartPath: ./sptribscron/
