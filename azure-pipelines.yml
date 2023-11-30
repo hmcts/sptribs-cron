@@ -41,4 +41,3 @@ jobs:
           chartName: sptribscron
           chartReleaseName: sptribs-cron
           chartNamespace: chart-tests
-          chartPath: ./sptribscron/
