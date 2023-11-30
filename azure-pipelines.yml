@@ -38,7 +38,7 @@ jobs:
     steps:
       - template: steps/charts/release.yaml@cnp-azuredevops-libraries
         parameters:
-          chartName: Chart.yaml
+          chartName: sptribs-cron
           chartReleaseName: sptribs-cron
           chartNamespace: chart-tests
           chartPath: ./sptribs-cron/
