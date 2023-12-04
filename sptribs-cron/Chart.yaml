@@ -3,10 +3,10 @@ description: SPTRIBS cron jobs
 home: https://github.com/hmcts/sptribs-cron
 apiVersion: v2
 appVersion: "1.0"
-version: 1.0.7
+version: 1.0.8
 maintainers:
   - name: HMCTS SPTRIBS Team
 dependencies:
   - name: job
-    version: 1.1.4
+    version: 1.1.5
     repository: https://hmctspublic.azurecr.io/helm/v1/repo/
